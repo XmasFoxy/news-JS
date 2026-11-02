@@ -16,20 +16,20 @@
         </main>
         <footer>
             <p class="copyright">
-                Copyright <a href="https://newsapi.org">NewsAPI</a>
+                <a href="https://newsapi.org" target="_blank" rel="noopener noreferrer">NewsAPI</a>
             </p>
         </footer>
 
         <template id="sourceItemTemp">
-            <div class="source__item">
+            <button class="source__item" type="button">
                 <span class="source__item-name"></span>
-            </div>
+            </button>
         </template>
 
         <template id="newsItemTemp">
-            <div class="news__item">
+            <article class="news__item">
                 <div class="news__meta">
-                    <div class="news__meta-photo"></div>
+                    <img class="news__meta-photo" loading="lazy" decoding="async" />
                     <ul class="news__meta-details">
                         <li class="news__meta-author"></li>
                         <li class="news__meta-date"></li>
@@ -40,10 +40,10 @@
                     <h3 class="news__description-source"></h3>
                     <p class="news__description-content"></p>
                     <p class="news__read-more">
-                        <a href="#">Read More</a>
+                        <a>Read More</a>
                     </p>
                 </div>
-            </div>
+            </article>
         </template>
     </body>
 </html>

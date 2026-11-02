@@ -1,20 +1,22 @@
 import './sources.css';
+import { type NewsSource } from '../../../types/news';
+import { getElement } from '../../../utils/dom';
 
 class Sources {
-    draw(data) {
+    public draw(data: readonly NewsSource[]): void {
         const fragment = document.createDocumentFragment();
-        const sourceItemTemp = document.querySelector('#sourceItemTemp');
+        const sourceItemTemplate = getElement<HTMLTemplateElement>(document, '#sourceItemTemp');
 
-        data.forEach((item) => {
-            const sourceClone = sourceItemTemp.content.cloneNode(true);
+        data.forEach((item): void => {
+            const sourceClone = sourceItemTemplate.content.cloneNode(true) as DocumentFragment;
 
-            sourceClone.querySelector('.source__item-name').textContent = item.name;
-            sourceClone.querySelector('.source__item').setAttribute('data-source-id', item.id);
+            getElement<HTMLButtonElement>(sourceClone, '.source__item').dataset.sourceId = item.id;
+            getElement<HTMLElement>(sourceClone, '.source__item-name').textContent = item.name;
 
             fragment.append(sourceClone);
         });
 
-        document.querySelector('.sources').append(fragment);
+        getElement<HTMLElement>(document, '.sources').replaceChildren(fragment);
     }
 }
 
