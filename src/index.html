@@ -7,29 +7,44 @@
         <title>NewsPortal</title>
     </head>
     <body>
-        <header>
-            <h1>News Portal</h1>
+        <header class="site-header">
+            <p class="site-header__eyebrow">Independent coverage, all in one place</p>
+            <h1>News <span>Portal</span></h1>
+            <p class="site-header__description">Choose a trusted source and catch up on the stories shaping today.</p>
         </header>
         <main>
-            <div class="sources buttons"></div>
-            <div class="news"></div>
+            <section class="source-section" aria-label="News sources">
+                <h2 class="section-title">Choose a source</h2>
+                <div class="sources" role="group" aria-label="News sources"></div>
+            </section>
+            <section class="news-section" aria-label="Latest articles">
+                <div class="news" aria-live="polite"></div>
+            </section>
         </main>
-        <footer>
+        <footer class="site-footer">
             <p class="copyright">
-                Copyright <a href="https://newsapi.org">NewsAPI</a>
+                <span>© 2026</span>
+                <a href="https://github.com/XmasFoxy" target="_blank" rel="noopener noreferrer">XmasFoxy</a>
+                <span>News data by <a href="https://newsapi.org" target="_blank" rel="noopener noreferrer">NewsAPI</a></span>
             </p>
+            <a class="course-link" href="https://rs.school/courses/javascript" target="_blank" rel="noopener noreferrer">
+                <img
+                    src="https://rs.school/_next/static/media/rss-logo.c19ce1b4.svg"
+                    alt="The Rolling Scopes School JavaScript course"
+                />
+            </a>
         </footer>
 
         <template id="sourceItemTemp">
-            <div class="source__item">
+            <button class="source__item" type="button">
                 <span class="source__item-name"></span>
-            </div>
+            </button>
         </template>
 
         <template id="newsItemTemp">
-            <div class="news__item">
+            <article class="news__item">
                 <div class="news__meta">
-                    <div class="news__meta-photo"></div>
+                    <img class="news__meta-photo" loading="lazy" decoding="async" />
                     <ul class="news__meta-details">
                         <li class="news__meta-author"></li>
                         <li class="news__meta-date"></li>
@@ -40,10 +55,10 @@
                     <h3 class="news__description-source"></h3>
                     <p class="news__description-content"></p>
                     <p class="news__read-more">
-                        <a href="#">Read More</a>
+                        <a>Read More</a>
                     </p>
                 </div>
-            </div>
+            </article>
         </template>
     </body>
 </html>
